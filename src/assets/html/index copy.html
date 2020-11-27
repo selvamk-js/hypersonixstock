@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highstock Example</title>
+
+    <script src="./js/highstock.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/exporting.js"></script>
+    <script src="./js/export-data.js"></script>
+</head>
+
+<body>
+    <div id="container" style="height: 400px; min-width: 310px"></div>
+    <script type="text/javascript">
+        window.addEventListener("error", handleWindowError); function handleWindowError(e) { alert(e.error) }
+
+        Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-c.json', function (data) {
+
+            // Create the chart
+            Highcharts.stockChart('container', {
+
+                rangeSelector: {
+                    selected: 1
+                },
+
+                title: {
+                    text: 'AAPL Stock Price'
+                },
+
+                series: [{
+                    name: 'AAPL Stock Price',
+                    data: data,
+                    type: 'area',
+                    threshold: null,
+                    tooltip: {
+                        valueDecimals: 2
+                    },
+                    fillColor: {
+                        linearGradient: {
+                            x1: 0,
+                            y1: 0,
+                            x2: 0,
+                            y2: 1
+                        },
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    }
+                }]
+            });
+        });
+
+    </script>
+</body>
+
+</html>

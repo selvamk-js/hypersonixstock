@@ -1,0 +1,53 @@
+import React, { useEffect } from 'react';
+import { Avatar, Button, Card, Paragraph, Divider } from 'react-native-paper';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useDispatch, useSelector } from 'react-redux';
+import { map } from 'lodash';
+import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
+import { sliceKey, reducer, actions } from './slice';
+
+import { useStyles } from '../styles';
+import { selectEmployeeData } from './selectors';
+import { appRootSaga } from './saga';
+import { ScrollView } from 'react-native';
+import { IEmployeeRes } from './types';
+
+const LeftContent = (props: any) => <Avatar.Icon {...props} icon="folder" />;
+
+const App = () => {
+  useInjectReducer({ key: sliceKey, reducer: reducer });
+  useInjectSaga({ key: sliceKey, saga: appRootSaga });
+  const GStyles = useStyles();
+  const employees = useSelector(selectEmployeeData);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(actions.loadEmployeeData());
+  }, [dispatch]);
+
+  return (
+    <SafeAreaView style={GStyles.background.root}>
+      <ScrollView>
+        {map(employees, (employee: IEmployeeRes) => (
+          <Card style={GStyles.card.root}>
+            <Card.Title
+              title={employee.employee_name}
+              subtitle={employee.employee_salary}
+              left={LeftContent}
+            />
+            <Divider />
+            <Card.Content>
+              <Paragraph>Age: {employee.employee_age}</Paragraph>
+            </Card.Content>
+            <Card.Actions>
+              <Button>Cancel</Button>
+              <Button>Ok</Button>
+            </Card.Actions>
+          </Card>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default App;
