@@ -7,7 +7,12 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint:precommit": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:css": "stylelint app/**/*.js",
+    "lint:eslint": "eslint --ignore-path .gitignore ",
+    "lint:eslint:fix": "eslint --ignore-path .gitignore --fix",
+    "lint:js": "npm run lint:eslint -- . ",
+    "lint:staged": "lint-staged"
   },
   "dependencies": {
     "@highcharts/highcharts-react-native": "^3.1.2",
@@ -56,10 +61,21 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-module-resolver": "^1.1.0",
     "jest": "^25.1.0",
+    "lint-staged": "^10.5.2",
     "metro-react-native-babel-preset": "^0.59.0",
+    "pre-commit": "^1.2.2",
     "react-test-renderer": "16.13.1",
     "typescript": "^3.8.3"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint:precommit"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "pre-commit": "lint:staged",
   "jest": {
     "preset": "react-native",
     "moduleFileExtensions": [
