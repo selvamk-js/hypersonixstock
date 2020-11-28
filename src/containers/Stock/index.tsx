@@ -17,6 +17,7 @@ import {
   Subheading,
 } from 'react-native-paper';
 import { useStyles } from 'styles/index';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const config = {
   title: {
@@ -186,7 +187,7 @@ const Stock = () => {
   );
 
   return (
-    <View style={GStyles.background.root}>
+    <SafeAreaView style={GStyles.background.root}>
       <Card style={GStyles.card.root}>
         <Card.Title
           title={<Subheading>Live Stock Data</Subheading>}
@@ -209,7 +210,7 @@ const Stock = () => {
           )}
         </View>
       </Card>
-    </View>
+    </SafeAreaView>
   );
 };
 
