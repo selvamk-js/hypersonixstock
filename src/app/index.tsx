@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { GoogleSignin } from '@react-native-community/google-signin';
+import { StyleSheet, View } from 'react-native';
+import Config from 'react-native-config';
 
 import { sliceKey, reducer } from './slice';
 import { appRootSaga } from './saga';
 import { selectToastMessage, selectToastVisibility } from './selectors';
 import Authentication from './components/Authentication';
 import SnackbarCustom from 'components/Snackbar';
-import { StyleSheet, View } from 'react-native';
-import config from 'config/signin';
 
 const App = () => {
   useInjectReducer({ key: sliceKey, reducer: reducer });
@@ -20,10 +20,10 @@ const App = () => {
 
   useEffect(() => {
     GoogleSignin.configure({
-      scopes: config.scopes,
-      webClientId: config.webClientId,
+      scopes: ['email', 'profile'],
+      webClientId: Config.webClientId,
       offlineAccess: false,
-      iosClientId: config.iosClientId,
+      iosClientId: Config.iosClientId,
     });
   }, []);
 

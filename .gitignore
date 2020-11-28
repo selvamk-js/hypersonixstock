@@ -29,7 +29,7 @@ build/
 local.properties
 *.iml
 
-src/config
+.env.development
 
 # Visual Studio Code
 #
