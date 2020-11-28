@@ -6,6 +6,7 @@ import HighchartWebView from 'components/HighchartWebView';
 import {
   Avatar,
   Button,
+  Caption,
   Card,
   Colors,
   Divider,
@@ -13,9 +14,13 @@ import {
   Subheading,
 } from 'react-native-paper';
 import { useStyles } from 'styles/index';
-import { useNavigation } from '@react-navigation/native';
+import {
+  CompositeNavigationProp,
+  useNavigation,
+} from '@react-navigation/native';
 import { GoogleSignin } from '@react-native-community/google-signin';
 import AsyncStorage from '@react-native-community/async-storage';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import AuthContext from 'app/components/AuthContext';
 import { IAuthContextType } from 'app/types';
@@ -23,6 +28,11 @@ import { stockSliceKey, reducer, actions } from './slice';
 import { stockSaga } from './saga';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectStockData, selectStockDataInfo } from './selectors';
+import Loader from 'components/Loader';
+import { selectGlobalLoader } from 'app/selectors';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { RootStackParamList } from 'routes/types';
 
 const config = {
   title: {
@@ -93,6 +103,15 @@ const config = {
   },
 };
 
+type StockScreenNavigationProp = CompositeNavigationProp<
+  StackNavigationProp<RootStackParamList, 'StockDashboard'>,
+  DrawerNavigationProp<RootStackParamList>
+>;
+
+type Props = {
+  navigation: StockScreenNavigationProp;
+};
+
 const Stock = () => {
   useInjectReducer({ key: stockSliceKey, reducer: reducer });
   useInjectSaga({ key: stockSliceKey, saga: stockSaga });
@@ -100,13 +119,13 @@ const Stock = () => {
   const dispatch = useDispatch();
   const stcokData = useSelector(selectStockData);
   const stockInfo = useSelector(selectStockDataInfo);
-  const navigation = useNavigation();
+  const isLoading = useSelector(selectGlobalLoader);
+  const navigation = useNavigation<StockScreenNavigationProp>();
   const { signOut } = useContext<IAuthContextType>(AuthContext);
 
   useEffect(() => {
     const isSignedIn = async () => {
-      const value = await GoogleSignin.isSignedIn();
-      console.log(value);
+      await GoogleSignin.isSignedIn();
     };
     isSignedIn();
   }, []);
@@ -120,6 +139,16 @@ const Stock = () => {
 
   useEffect(() => {
     navigation.setOptions({
+      headerLeft: () => (
+        <IconButton
+          icon={() => (
+            <FontAwesome5 name="bars" size={20} color="white" solid />
+          )}
+          color="white"
+          size={30}
+          onPress={() => navigation.openDrawer()}
+        />
+      ),
       headerRight: () => (
         <View>
           <Button
@@ -127,7 +156,7 @@ const Stock = () => {
             theme={{ colors: { primary: '#FFFFFF' }, roundness: 25 }}
             onPress={_signOutAsync}
           >
-            Sign Out
+            <Caption style={localStyles.signOut}>Sign Out</Caption>
           </Button>
         </View>
       ),
@@ -210,7 +239,7 @@ const Stock = () => {
       {...lprops}
       style={localStyles.avatar}
       icon="chart-timeline"
-      color={Colors.cyanA700}
+      color={Colors.pink900}
     />
   );
   const RightContent = (rprops: any) => (
@@ -219,7 +248,7 @@ const Stock = () => {
         icon="reload"
         color={Colors.amber900}
         size={25}
-        onPress={() => console.log('Pressed')}
+        onPress={() => dispatch(actions.loadStockData())}
       />
     </View>
   );
@@ -227,7 +256,7 @@ const Stock = () => {
   return (
     <View style={GStyles.background.root}>
       <StatusBar barStyle="light-content" />
-      <Card style={GStyles.card.root}>
+      <Card style={GStyles.card.root} elevation={3}>
         <Card.Title
           title={<Subheading>Live Stock Data</Subheading>}
           subtitle={
@@ -249,6 +278,7 @@ const Stock = () => {
           )}
         </View>
       </Card>
+      {isLoading && <Loader showLoader={isLoading} />}
     </View>
   );
 };
@@ -261,13 +291,19 @@ const localStyles = StyleSheet.create({
   },
   cardContent: {
     paddingVertical: 5,
+    minHeight: 500,
   },
   rightView: {
     margin: 5,
   },
   wvContainer: { borderRadius: 10 },
   avatar: {
-    backgroundColor: Colors.cyan50,
+    backgroundColor: Colors.pink50,
+  },
+  signOut: {
+    color: '#FFFFFF',
+    textTransform: 'none',
+    fontWeight: 'bold',
   },
 });
 

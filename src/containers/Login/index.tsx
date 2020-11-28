@@ -31,7 +31,6 @@ const Login = () => {
   }, [signIn, token]);
 
   const handleGoogleSignIn = () => {
-    console.log('handleGoogleSignIn');
     dispatch(actions.googleSignIn());
   };
 

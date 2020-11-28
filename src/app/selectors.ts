@@ -34,3 +34,8 @@ export const selectSplashData = createSelector(
   [selectRootStore],
   store => store.splashLoad
 );
+
+export const selectUserInfo = createSelector(
+  [selectRootStore],
+  store => store.userInfo
+);

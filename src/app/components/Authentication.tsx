@@ -10,8 +10,9 @@ import Login from 'containers/Login';
 import AuthContext from './AuthContext';
 import { actions } from '../slice';
 import Loader from '../../components/Loader';
-import Stock from 'containers/Stock';
-import { useTheme } from 'react-native-paper';
+// import Stock from 'containers/Stock';
+// import { useTheme } from 'react-native-paper';
+import AppRouter from 'routes';
 
 function SplashScreen() {
   return (
@@ -27,7 +28,7 @@ const Stack = createStackNavigator();
 const Authentication = () => {
   // const { dispatchRestoreToken, dispatchSetToken, dispatchResetToken } = props;
   const globalDispatch = useDispatch();
-  const theme = useTheme();
+  // const theme = useTheme();
   const [state, dispatch] = React.useReducer(
     (prevState: any, action: any) => {
       switch (action.type) {
@@ -106,24 +107,25 @@ const Authentication = () => {
         </Stack.Navigator>
       );
     }
-    return (
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Stocks"
-          component={Stock}
-          options={{
-            title: 'Hypersonix Stock',
-            headerStyle: {
-              backgroundColor: theme.colors.primary,
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-        />
-      </Stack.Navigator>
-    );
+    // return (
+    //   <Stack.Navigator>
+    //     <Stack.Screen
+    //       name="Stocks"
+    //       component={Stock}
+    //       options={{
+    //         title: 'Hypersonix Stock',
+    //         headerStyle: {
+    //           backgroundColor: theme.colors.primary,
+    //         },
+    //         headerTintColor: '#fff',
+    //         headerTitleStyle: {
+    //           fontWeight: 'bold',
+    //         },
+    //       }}
+    //     />
+    //   </Stack.Navigator>
+    // );
+    return <AppRouter />;
   };
 
   return (

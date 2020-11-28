@@ -1,4 +1,4 @@
-import { Metrics } from 'constants';
+import Metrics from 'constants/Metrices';
 import { StyleSheet } from 'react-native';
 
 const { CARD_BORDER_RADIUS, MARGIN } = Metrics;

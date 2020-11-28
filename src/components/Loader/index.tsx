@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ActivityIndicator, StyleSheet } from 'react-native';
-import { Paragraph, Portal, Dialog, useTheme } from 'react-native-paper';
+import { Paragraph, Portal, Dialog, Colors } from 'react-native-paper';
 import { BlurView } from '@react-native-community/blur';
 
 interface IProps {
@@ -9,7 +9,6 @@ interface IProps {
 
 const Loader = (props: IProps) => {
   const { showLoader } = props;
-  const { colors } = useTheme();
 
   return (
     <Portal>
@@ -25,7 +24,7 @@ const Loader = (props: IProps) => {
           <View style={styles.dialogContent}>
             <ActivityIndicator
               size="large"
-              color={colors.primary}
+              color={Colors.blue500}
               style={styles.acitivyIndicator}
             />
             <Paragraph>{'Loading...'}</Paragraph>

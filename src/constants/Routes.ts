@@ -1,5 +1,5 @@
-const HomePage = {
-  dashboard: 'DashboardMainScreen',
+const StockHome = {
+  stock: 'DashboardMainScreen',
 };
 
-export { HomePage };
+export default { StockHome };
