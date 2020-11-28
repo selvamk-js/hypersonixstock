@@ -8,24 +8,24 @@ const selectRootStore = (state: RootState) =>
 
 export const selectAccessToken = createSelector(
   [selectRootStore],
-  store => store.accessToken,
+  store => store.accessToken
 );
 
 export const selectGlobalLoader = createSelector(
   [selectRootStore],
-  store => store.globalLoader,
+  store => store.globalLoader
 );
 export const selectToastVisibility = createSelector(
   [selectRootStore],
-  store => store.toastVisible,
+  store => store.toastVisible
 );
 
 export const selectToastMessage = createSelector(
   [selectRootStore],
-  store => store.toast,
+  store => store.toast
 );
 
 export const selectEmployeeData = createSelector(
   [selectRootStore],
-  store => store.employeeData,
+  store => store.employeeData
 );

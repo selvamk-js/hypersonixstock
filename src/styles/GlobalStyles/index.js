@@ -8,6 +8,7 @@ const styles = {
     root: {
       borderRadius: CARD_BORDER_RADIUS,
       margin: MARGIN,
+      backgroundColor: '#FFFFFF',
     },
     roundIcon: {
       alignItems: 'center',

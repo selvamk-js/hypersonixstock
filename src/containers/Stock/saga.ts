@@ -1,21 +1,21 @@
-import { call, put, takeLatest, delay } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { request } from 'utils/request';
 import { isEmpty } from 'lodash';
+import Config from 'react-native-config';
 
 import { actions } from './slice';
+import { MapResponse } from './mappers';
 export function* getStockdataAPI() {
-  console.log('test');
-
-  yield delay(500);
-  const requestURL = 'https://demo-live-data.highcharts.com/aapl-c.json';
-
+  // yield delay(500);
   try {
-    const response = yield call(request, requestURL);
+    const response = yield call(request, Config.API_URL);
 
     if (!isEmpty(response)) {
-      yield put(actions.loadedStockData(response));
+      const MappedRes = MapResponse(response['Time Series (5min)']);
+      yield put(actions.storeStockInfo(response['Meta Data']));
+      yield put(actions.storeStockData(MappedRes));
     } else {
-      yield put(actions.loadedStockData([]));
+      yield put(actions.storeStockData([]));
     }
   } catch (err) {
     console.log(JSON.stringify(err));

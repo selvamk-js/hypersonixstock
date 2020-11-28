@@ -10,13 +10,14 @@ import App from 'app';
 import { configureAppStore } from 'store/configureStore';
 import { StatusBar } from 'react-native';
 import { StyleProvider } from './styles';
+import theme from 'theme';
 
 const store = configureAppStore();
 
 const ConnectedApp = () => (
   <SafeAreaProvider>
     <Provider store={store}>
-      <PaperProvider>
+      <PaperProvider theme={theme}>
         <StyleProvider>
           <StatusBar
             translucent

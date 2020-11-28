@@ -13,7 +13,7 @@ export const createSlice = <
   CaseReducers extends SliceCaseReducers<State>,
   Name extends RootStateKeyType
 >(
-  options: CreateSliceOptions<State, CaseReducers, Name>,
+  options: CreateSliceOptions<State, CaseReducers, Name>
 ) => {
   return createSliceOriginal(options);
 };

@@ -163,9 +163,11 @@ const HighchartWebView = ({ options, styles }: IHighchartWebView) => {
           scrollEnabled={false}
           mixedContentMode="always"
           allowFileAccessFromFileURLs={true}
+          startInLoadingState
           onMessage={(e: { nativeEvent: { data?: string } }) => {
             Alert.alert('Message received from JS: ', e.nativeEvent.data);
           }}
+          style={styles}
         />
       </View>
     );
