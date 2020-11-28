@@ -11,13 +11,13 @@ export const lazyLoad = <
 >(
   importFunc: () => T,
   selectorFunc?: (s: Unpromisify<T>) => U,
-  opts: Opts = { fallback: null },
+  opts: Opts = { fallback: null }
 ) => {
   let lazyFactory: () => Promise<{ default: U }> = importFunc;
 
   if (selectorFunc) {
     lazyFactory = () =>
-      importFunc().then((module) => ({ default: selectorFunc(module) }));
+      importFunc().then(module => ({ default: selectorFunc(module) }));
   }
 
   const LazyComponent = lazy(lazyFactory);

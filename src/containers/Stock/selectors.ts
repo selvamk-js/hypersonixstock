@@ -9,3 +9,8 @@ export const selectStockData = createSelector(
   [selectRootStore],
   store => store.stockData
 );
+
+export const selectStockDataInfo = createSelector(
+  [selectRootStore],
+  store => store.stockInfo
+);

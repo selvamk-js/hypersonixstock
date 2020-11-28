@@ -26,7 +26,7 @@ const createWithStyle = (StyleProvider, StyleContext) =>
 
         return (
           <StyleContext.Consumer>
-            {(styles) => (
+            {styles => (
               <Comp
                 {...rest}
                 styles={this._merge(styles, rest.styles)}

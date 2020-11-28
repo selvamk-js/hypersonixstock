@@ -17,7 +17,7 @@ export default function createStyling(defaultStyles) {
         styles && overrides
           ? deepmerge(styles, overrides)
           : styles || overrides,
-      [styles, overrides],
+      [styles, overrides]
     );
 
     return result;
