@@ -29,3 +29,8 @@ export const selectEmployeeData = createSelector(
   [selectRootStore],
   store => store.employeeData
 );
+
+export const selectSplashData = createSelector(
+  [selectRootStore],
+  store => store.splashLoad
+);

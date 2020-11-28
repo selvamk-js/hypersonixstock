@@ -1,4 +1,6 @@
 import 'react-native-gesture-handler';
+import 'react-native-get-random-values';
+
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { Provider as PaperProvider } from 'react-native-paper';

@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { StatusBar, StyleSheet, View } from 'react-native';
 import { isEmpty } from 'lodash';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
-import { stockSliceKey, reducer, actions } from './slice';
-import { stockSaga } from './saga';
-// @ts-ignore
-import { useDispatch, useSelector } from 'react-redux';
-import { selectStockData, selectStockDataInfo } from './selectors';
 import HighchartWebView from 'components/HighchartWebView';
 import {
   Avatar,
+  Button,
   Card,
   Colors,
   Divider,
@@ -17,7 +13,16 @@ import {
   Subheading,
 } from 'react-native-paper';
 import { useStyles } from 'styles/index';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
+import { GoogleSignin } from '@react-native-community/google-signin';
+import AsyncStorage from '@react-native-community/async-storage';
+
+import AuthContext from 'app/components/AuthContext';
+import { IAuthContextType } from 'app/types';
+import { stockSliceKey, reducer, actions } from './slice';
+import { stockSaga } from './saga';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectStockData, selectStockDataInfo } from './selectors';
 
 const config = {
   title: {
@@ -95,6 +100,39 @@ const Stock = () => {
   const dispatch = useDispatch();
   const stcokData = useSelector(selectStockData);
   const stockInfo = useSelector(selectStockDataInfo);
+  const navigation = useNavigation();
+  const { signOut } = useContext<IAuthContextType>(AuthContext);
+
+  useEffect(() => {
+    const isSignedIn = async () => {
+      const value = await GoogleSignin.isSignedIn();
+      console.log(value);
+    };
+    isSignedIn();
+  }, []);
+
+  const _signOutAsync = useCallback(async () => {
+    await AsyncStorage.clear();
+    await GoogleSignin.revokeAccess();
+    await GoogleSignin.signOut();
+    signOut();
+  }, [signOut]);
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <View>
+          <Button
+            mode="text"
+            theme={{ colors: { primary: '#FFFFFF' }, roundness: 25 }}
+            onPress={_signOutAsync}
+          >
+            Sign Out
+          </Button>
+        </View>
+      ),
+    });
+  }, [navigation, _signOutAsync]);
 
   useEffect(() => {
     setChartOptions({
@@ -187,7 +225,8 @@ const Stock = () => {
   );
 
   return (
-    <SafeAreaView style={GStyles.background.root}>
+    <View style={GStyles.background.root}>
+      <StatusBar barStyle="light-content" />
       <Card style={GStyles.card.root}>
         <Card.Title
           title={<Subheading>Live Stock Data</Subheading>}
@@ -210,7 +249,7 @@ const Stock = () => {
           )}
         </View>
       </Card>
-    </SafeAreaView>
+    </View>
   );
 };
 

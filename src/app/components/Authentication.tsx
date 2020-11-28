@@ -3,13 +3,15 @@ import { StatusBar, StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AsyncStorage from '@react-native-community/async-storage';
-
+import { useDispatch } from 'react-redux';
 import NavigationService from 'services/NavigationService';
+
 import Login from 'containers/Login';
 import AuthContext from './AuthContext';
-
+import { actions } from '../slice';
 import Loader from '../../components/Loader';
 import Stock from 'containers/Stock';
+import { useTheme } from 'react-native-paper';
 
 function SplashScreen() {
   return (
@@ -24,7 +26,8 @@ const Stack = createStackNavigator();
 
 const Authentication = () => {
   // const { dispatchRestoreToken, dispatchSetToken, dispatchResetToken } = props;
-
+  const globalDispatch = useDispatch();
+  const theme = useTheme();
   const [state, dispatch] = React.useReducer(
     (prevState: any, action: any) => {
       switch (action.type) {
@@ -67,24 +70,25 @@ const Authentication = () => {
       // This will switch to the App screen or Auth screen and this loading
       // screen will be unmounted and thrown away.
       // dispatchRestoreToken(token);
+      globalDispatch(actions.restoreAccessToken(token || undefined));
       dispatch({ type: 'RESTORE_TOKEN', token });
     };
 
     bootstrapAsync();
-  }, []);
+  }, [globalDispatch]);
 
   const authContext = React.useMemo(
     () => ({
-      signIn: async (data: any) => {
-        // dispatchSetToken(data);
+      signIn: async (data: string) => {
+        globalDispatch(actions.changeAccessToken(data));
         dispatch({ type: 'SIGN_IN', token: data });
       },
       signOut: () => {
-        // dispatchResetToken();
+        globalDispatch(actions.resetAccessToken());
         dispatch({ type: 'SIGN_OUT' });
       },
     }),
-    []
+    [globalDispatch]
   );
 
   const AuthFlow = () => {
@@ -104,7 +108,20 @@ const Authentication = () => {
     }
     return (
       <Stack.Navigator>
-        <Stack.Screen name="Stocks" component={Stock} />
+        <Stack.Screen
+          name="Stocks"
+          component={Stock}
+          options={{
+            title: 'Hypersonix Stock',
+            headerStyle: {
+              backgroundColor: theme.colors.primary,
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
       </Stack.Navigator>
     );
   };

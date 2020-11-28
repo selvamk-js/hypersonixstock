@@ -1,6 +1,7 @@
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 import { IAppRootState } from 'app/types';
+import { ILoginStore } from 'containers/Login/types';
 import { IStockStore } from 'containers/Stock/types';
 
 /*
@@ -10,4 +11,6 @@ import { IStockStore } from 'containers/Stock/types';
 export interface RootState {
   appRootStore?: IAppRootState;
   stockStore?: IStockStore;
+
+  loginStore?: ILoginStore;
 }

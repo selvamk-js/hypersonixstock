@@ -1,5 +1,6 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { INFO } from 'constants/GlobalConstants';
+import { IUserData } from 'containers/Login/types';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { IToast, IAppRootState, IEmployeeRes } from './types';
 
@@ -8,18 +9,53 @@ export const initialState: IAppRootState = {
     toastMessage: '',
     toastType: INFO,
   },
-  accessToken: 'testetoken',
+  accessToken: undefined,
   globalLoader: false,
   toastVisible: false,
+  splashLoad: false,
   employeeData: [],
+  userInfo: {
+    idToken: '',
+    serverAuthCode: '',
+    scopes: [], // on iOS this is empty array if no additional scopes are defined
+    user: {
+      email: '',
+      id: '',
+      givenName: '',
+      familyName: '',
+      photo: '', // url
+      name: '', // full name
+    },
+  },
 };
 
 const githubRepoFormSlice = createSlice({
   name: 'appRootStore',
   initialState,
   reducers: {
-    changeAccessToken(state, action: PayloadAction<string>) {
+    changeAccessToken(state, action: PayloadAction<string | undefined>) {
       state.accessToken = action.payload;
+    },
+    restoreAccessToken(state, action: PayloadAction<string | undefined>) {
+      state.accessToken = action.payload;
+      state.splashLoad = false;
+    },
+    resetAccessToken(state) {
+      state.accessToken = undefined;
+      state.splashLoad = false;
+      state.userInfo = {
+        idToken: '',
+        serverAuthCode: '',
+        scopes: [], // on iOS this is empty array if no additional scopes are defined
+        user: {
+          email: '',
+          id: '',
+          givenName: '',
+          familyName: '',
+          photo: '', // url
+          name: '', // full name
+        },
+      };
     },
     changeGlobalLoader(state, action: PayloadAction<boolean>) {
       state.globalLoader = action.payload;
@@ -35,6 +71,9 @@ const githubRepoFormSlice = createSlice({
     },
     loadedEmployeeData(state, action: PayloadAction<IEmployeeRes[]>) {
       state.employeeData = action.payload;
+    },
+    storeUserInfo(state, action: PayloadAction<IUserData>) {
+      state.userInfo = action.payload;
     },
   },
 });

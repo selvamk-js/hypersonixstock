@@ -1,13 +1,17 @@
+import { IUserData } from 'containers/Login/types';
+
 export interface IToast {
   toastMessage: string;
   toastType: string;
 }
 export interface IAppRootState {
   toast: IToast;
-  accessToken: string;
+  accessToken: string | undefined;
   globalLoader: boolean;
   toastVisible: boolean;
+  splashLoad: boolean;
   employeeData: IEmployeeRes[];
+  userInfo: IUserData;
 }
 
 export interface IEmployeeRes {
@@ -19,7 +23,7 @@ export interface IEmployeeRes {
 }
 
 export interface IAuthContextType {
-  signIn: (data: any) => Promise<void>;
+  signIn: (data: string) => Promise<void>;
   signOut: () => void;
 }
 

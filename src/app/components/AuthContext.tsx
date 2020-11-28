@@ -4,8 +4,14 @@
 import React from 'react';
 import { IAuthContextType } from '../types';
 
-const AuthContext = React.createContext<IAuthContextType | undefined>(
-  undefined
-);
+const DefaultPromise = (_data: string) =>
+  new Promise<void>(() => {
+    return null;
+  });
+
+const AuthContext = React.createContext<IAuthContextType>({
+  signIn: DefaultPromise,
+  signOut: () => {},
+});
 
 export default AuthContext;

@@ -1,9 +1,40 @@
-import * as React from 'react';
-import { Alert, StatusBar, StyleSheet, View } from 'react-native';
+import React, { useContext, useEffect } from 'react';
+import { StatusBar, StyleSheet, View } from 'react-native';
 import { Button, Title } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
+import AsyncStorage from '@react-native-community/async-storage';
+
+import { actions, loginSliceKey, reducer } from './slice';
+import { loginSaga } from './saga';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectAccessToken } from 'app/selectors';
+import AuthContext from 'app/components/AuthContext';
+import { IAuthContextType } from 'app/types';
 
 const Login = () => {
+  useInjectReducer({ key: loginSliceKey, reducer: reducer });
+  useInjectSaga({ key: loginSliceKey, saga: loginSaga });
+  const { signIn } = useContext<IAuthContextType>(AuthContext);
+
+  const dispatch = useDispatch();
+  const token = useSelector(selectAccessToken) || '';
+
+  useEffect(() => {
+    const setToken = async () => {
+      if (token !== undefined && token !== '') {
+        await AsyncStorage.setItem('@appusertoken', token);
+        signIn(token);
+      }
+    };
+    setToken();
+  }, [signIn, token]);
+
+  const handleGoogleSignIn = () => {
+    console.log('handleGoogleSignIn');
+    dispatch(actions.googleSignIn());
+  };
+
   return (
     <View style={styles.rootView}>
       <StatusBar animated barStyle="light-content" />
@@ -12,7 +43,7 @@ const Login = () => {
         mode="outlined"
         theme={{ colors: { primary: '#FFFFFF' }, roundness: 25 }}
         icon={() => <Icon name="google" brand size={25} color="#FFFFFF" />}
-        onPress={() => Alert.alert('test')}
+        onPress={handleGoogleSignIn}
       >
         <Title style={styles.title}>Sign In with Google</Title>
       </Button>

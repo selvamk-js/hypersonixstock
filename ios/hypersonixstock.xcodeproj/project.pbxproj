@@ -11,15 +11,16 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		25E7CEE3B797E2511D994B0E /* libPods-hypersonixstock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3E0810E48EBFD4335DACC /* libPods-hypersonixstock.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* hypersonixstockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* hypersonixstockTests.m */; };
-		5760C5792C3CEE8CE3E5594B /* libPods-hypersonixstock-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A588597C51B583E8C04526 /* libPods-hypersonixstock-tvOS.a */; };
+		3518BD2F636D09A932784F6E /* libPods-hypersonixstock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4AAE7A1077C1F096A028C2 /* libPods-hypersonixstock.a */; };
+		367386F36C4A496A5F73BEC2 /* libPods-hypersonixstock-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F23657359712AB8F19B0FDFC /* libPods-hypersonixstock-tvOSTests.a */; };
+		38D2955F25725C8A00EE904A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38D2955E25725C8A00EE904A /* GoogleService-Info.plist */; };
+		47AE738153B7CB9AC3115AA3 /* libPods-hypersonixstock-hypersonixstockTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C21E37EA55E352C6A509033 /* libPods-hypersonixstock-hypersonixstockTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		BF2965DBE5AA29B68E2FC865 /* libPods-hypersonixstock-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D229A7EA81BA5B020B6E1EA2 /* libPods-hypersonixstock-tvOSTests.a */; };
-		EC03E2807DA9DEDC5C59F304 /* libPods-hypersonixstock-hypersonixstockTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 930846D53F2D274E7268903B /* libPods-hypersonixstock-hypersonixstockTests.a */; };
+		D1E2F9B8C1A82FE8E0E59DC4 /* libPods-hypersonixstock-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0874B68EA7C8A8E844D40FDB /* libPods-hypersonixstock-tvOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,16 +45,17 @@
 		00E356EE1AD99517003FC87E /* hypersonixstockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hypersonixstockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* hypersonixstockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hypersonixstockTests.m; sourceTree = "<group>"; };
+		0874B68EA7C8A8E844D40FDB /* libPods-hypersonixstock-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hypersonixstock-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* hypersonixstock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hypersonixstock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = hypersonixstock/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = hypersonixstock/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = hypersonixstock/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = hypersonixstock/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = hypersonixstock/main.m; sourceTree = "<group>"; };
-		27CEC325B52F573D91275381 /* Pods-hypersonixstock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock.debug.xcconfig"; path = "Target Support Files/Pods-hypersonixstock/Pods-hypersonixstock.debug.xcconfig"; sourceTree = "<group>"; };
+		1A4AAE7A1077C1F096A028C2 /* libPods-hypersonixstock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hypersonixstock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A268700A1BFE92A6CCB6367 /* Pods-hypersonixstock-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-tvOSTests/Pods-hypersonixstock-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* hypersonixstock-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hypersonixstock-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* hypersonixstock-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hypersonixstock-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F39B2CEE975F66F666BC9C3 /* Pods-hypersonixstock-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-tvOS.release.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-tvOS/Pods-hypersonixstock-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		38C8F5C22570289E005AFC0B /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		38C8F5C32570289E005AFC0B /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		38C8F5C42570289E005AFC0B /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
@@ -70,19 +72,19 @@
 		38C8F5CF2570289E005AFC0B /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		38C8F5D02570289E005AFC0B /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		38C8F5D12570289E005AFC0B /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		38D2955E25725C8A00EE904A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		41AC53B2C6D951A534220C5D /* Pods-hypersonixstock-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-tvOS/Pods-hypersonixstock-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		66A59A7F4CD9E195DB2DE7E7 /* Pods-hypersonixstock-hypersonixstockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-hypersonixstockTests.release.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-hypersonixstockTests/Pods-hypersonixstock-hypersonixstockTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = hypersonixstock/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8CD3CF5ECF81FFA4D86C24C8 /* Pods-hypersonixstock-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-tvOSTests/Pods-hypersonixstock-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		930846D53F2D274E7268903B /* libPods-hypersonixstock-hypersonixstockTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hypersonixstock-hypersonixstockTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		96088557AEEDE0FB75B4CFDE /* Pods-hypersonixstock-hypersonixstockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-hypersonixstockTests.debug.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-hypersonixstockTests/Pods-hypersonixstock-hypersonixstockTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9AB01E62B183AE22908DDC3C /* Pods-hypersonixstock-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-tvOSTests/Pods-hypersonixstock-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A756F0EBC8CD1B68D85004D1 /* Pods-hypersonixstock-hypersonixstockTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-hypersonixstockTests.release.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-hypersonixstockTests/Pods-hypersonixstock-hypersonixstockTests.release.xcconfig"; sourceTree = "<group>"; };
-		BD75AC4746FCF715FC9431F4 /* Pods-hypersonixstock-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-tvOS/Pods-hypersonixstock-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		CBA3E0810E48EBFD4335DACC /* libPods-hypersonixstock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hypersonixstock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1A588597C51B583E8C04526 /* libPods-hypersonixstock-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hypersonixstock-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D229A7EA81BA5B020B6E1EA2 /* libPods-hypersonixstock-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hypersonixstock-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C21E37EA55E352C6A509033 /* libPods-hypersonixstock-hypersonixstockTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hypersonixstock-hypersonixstockTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A65CCC4992B43D010C9F2167 /* Pods-hypersonixstock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock.debug.xcconfig"; path = "Target Support Files/Pods-hypersonixstock/Pods-hypersonixstock.debug.xcconfig"; sourceTree = "<group>"; };
+		AB17104EE83B86AD6A22A25F /* Pods-hypersonixstock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock.release.xcconfig"; path = "Target Support Files/Pods-hypersonixstock/Pods-hypersonixstock.release.xcconfig"; sourceTree = "<group>"; };
+		AF5417A37F2E516D63D4A9ED /* Pods-hypersonixstock-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-tvOSTests/Pods-hypersonixstock-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DDA5EA59C938DF84D6893626 /* Pods-hypersonixstock-hypersonixstockTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-hypersonixstockTests.debug.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-hypersonixstockTests/Pods-hypersonixstock-hypersonixstockTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F3A54F9A53D9571E749B0C0D /* Pods-hypersonixstock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock.release.xcconfig"; path = "Target Support Files/Pods-hypersonixstock/Pods-hypersonixstock.release.xcconfig"; sourceTree = "<group>"; };
+		F23657359712AB8F19B0FDFC /* libPods-hypersonixstock-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hypersonixstock-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEEEDCB9E62ADD81240256A4 /* Pods-hypersonixstock-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hypersonixstock-tvOS.release.xcconfig"; path = "Target Support Files/Pods-hypersonixstock-tvOS/Pods-hypersonixstock-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC03E2807DA9DEDC5C59F304 /* libPods-hypersonixstock-hypersonixstockTests.a in Frameworks */,
+				47AE738153B7CB9AC3115AA3 /* libPods-hypersonixstock-hypersonixstockTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25E7CEE3B797E2511D994B0E /* libPods-hypersonixstock.a in Frameworks */,
+				3518BD2F636D09A932784F6E /* libPods-hypersonixstock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5760C5792C3CEE8CE3E5594B /* libPods-hypersonixstock-tvOS.a in Frameworks */,
+				D1E2F9B8C1A82FE8E0E59DC4 /* libPods-hypersonixstock-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2965DBE5AA29B68E2FC865 /* libPods-hypersonixstock-tvOSTests.a in Frameworks */,
+				367386F36C4A496A5F73BEC2 /* libPods-hypersonixstock-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +143,7 @@
 		13B07FAE1A68108700A75B9A /* hypersonixstock */ = {
 			isa = PBXGroup;
 			children = (
+				38D2955E25725C8A00EE904A /* GoogleService-Info.plist */,
 				38C8F5C12570281A005AFC0B /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -156,14 +159,14 @@
 		281CED99AEED24CB2000D299 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				27CEC325B52F573D91275381 /* Pods-hypersonixstock.debug.xcconfig */,
-				F3A54F9A53D9571E749B0C0D /* Pods-hypersonixstock.release.xcconfig */,
-				96088557AEEDE0FB75B4CFDE /* Pods-hypersonixstock-hypersonixstockTests.debug.xcconfig */,
-				A756F0EBC8CD1B68D85004D1 /* Pods-hypersonixstock-hypersonixstockTests.release.xcconfig */,
-				BD75AC4746FCF715FC9431F4 /* Pods-hypersonixstock-tvOS.debug.xcconfig */,
-				2F39B2CEE975F66F666BC9C3 /* Pods-hypersonixstock-tvOS.release.xcconfig */,
-				9AB01E62B183AE22908DDC3C /* Pods-hypersonixstock-tvOSTests.debug.xcconfig */,
-				8CD3CF5ECF81FFA4D86C24C8 /* Pods-hypersonixstock-tvOSTests.release.xcconfig */,
+				A65CCC4992B43D010C9F2167 /* Pods-hypersonixstock.debug.xcconfig */,
+				AB17104EE83B86AD6A22A25F /* Pods-hypersonixstock.release.xcconfig */,
+				DDA5EA59C938DF84D6893626 /* Pods-hypersonixstock-hypersonixstockTests.debug.xcconfig */,
+				66A59A7F4CD9E195DB2DE7E7 /* Pods-hypersonixstock-hypersonixstockTests.release.xcconfig */,
+				41AC53B2C6D951A534220C5D /* Pods-hypersonixstock-tvOS.debug.xcconfig */,
+				FEEEDCB9E62ADD81240256A4 /* Pods-hypersonixstock-tvOS.release.xcconfig */,
+				AF5417A37F2E516D63D4A9ED /* Pods-hypersonixstock-tvOSTests.debug.xcconfig */,
+				2A268700A1BFE92A6CCB6367 /* Pods-hypersonixstock-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -173,10 +176,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				CBA3E0810E48EBFD4335DACC /* libPods-hypersonixstock.a */,
-				930846D53F2D274E7268903B /* libPods-hypersonixstock-hypersonixstockTests.a */,
-				D1A588597C51B583E8C04526 /* libPods-hypersonixstock-tvOS.a */,
-				D229A7EA81BA5B020B6E1EA2 /* libPods-hypersonixstock-tvOSTests.a */,
+				1A4AAE7A1077C1F096A028C2 /* libPods-hypersonixstock.a */,
+				8C21E37EA55E352C6A509033 /* libPods-hypersonixstock-hypersonixstockTests.a */,
+				0874B68EA7C8A8E844D40FDB /* libPods-hypersonixstock-tvOS.a */,
+				F23657359712AB8F19B0FDFC /* libPods-hypersonixstock-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,11 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "hypersonixstockTests" */;
 			buildPhases = (
-				35448D17C0ABE0ED970854EF /* [CP] Check Pods Manifest.lock */,
+				ABB89760E31A8F24A67A03F6 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				85C6A1E454ACCA3C85AB008B /* [CP] Copy Pods Resources */,
+				DDB0B9B93ECA875D6ABEE8D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,13 +267,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "hypersonixstock" */;
 			buildPhases = (
-				C339F89F2C48D3AF656375A7 /* [CP] Check Pods Manifest.lock */,
+				9ECA63C13C10D1D46D3A618F /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				851474D5FBE91005B22FAB15 /* [CP] Copy Pods Resources */,
+				BCF72F96D411767BF3B71708 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,7 +288,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "hypersonixstock-tvOS" */;
 			buildPhases = (
-				35DE26E7A8AECF146582A644 /* [CP] Check Pods Manifest.lock */,
+				EB6076AE771D3C86C16AADBA /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -305,7 +308,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "hypersonixstock-tvOSTests" */;
 			buildPhases = (
-				2777A9B15C6FBC55C948EDAC /* [CP] Check Pods Manifest.lock */,
+				B444A5D7E98F4BBD032086B6 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -381,6 +384,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				38D2955F25725C8A00EE904A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,28 +420,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		2777A9B15C6FBC55C948EDAC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-hypersonixstock-tvOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,7 +434,29 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		35448D17C0ABE0ED970854EF /* [CP] Check Pods Manifest.lock */ = {
+		9ECA63C13C10D1D46D3A618F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hypersonixstock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABB89760E31A8F24A67A03F6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -474,7 +478,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		35DE26E7A8AECF146582A644 /* [CP] Check Pods Manifest.lock */ = {
+		B444A5D7E98F4BBD032086B6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -489,20 +493,21 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-hypersonixstock-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-hypersonixstock-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		851474D5FBE91005B22FAB15 /* [CP] Copy Pods Resources */ = {
+		BCF72F96D411767BF3B71708 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-hypersonixstock/Pods-hypersonixstock-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -523,6 +528,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -546,13 +552,14 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hypersonixstock/Pods-hypersonixstock-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		85C6A1E454ACCA3C85AB008B /* [CP] Copy Pods Resources */ = {
+		DDB0B9B93ECA875D6ABEE8D8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-hypersonixstock-hypersonixstockTests/Pods-hypersonixstock-hypersonixstockTests-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -573,6 +580,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
@@ -596,7 +604,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hypersonixstock-hypersonixstockTests/Pods-hypersonixstock-hypersonixstockTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C339F89F2C48D3AF656375A7 /* [CP] Check Pods Manifest.lock */ = {
+		EB6076AE771D3C86C16AADBA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -611,7 +619,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-hypersonixstock-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-hypersonixstock-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -711,7 +719,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96088557AEEDE0FB75B4CFDE /* Pods-hypersonixstock-hypersonixstockTests.debug.xcconfig */;
+			baseConfigurationReference = DDA5EA59C938DF84D6893626 /* Pods-hypersonixstock-hypersonixstockTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -734,7 +742,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A756F0EBC8CD1B68D85004D1 /* Pods-hypersonixstock-hypersonixstockTests.release.xcconfig */;
+			baseConfigurationReference = 66A59A7F4CD9E195DB2DE7E7 /* Pods-hypersonixstock-hypersonixstockTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -754,7 +762,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27CEC325B52F573D91275381 /* Pods-hypersonixstock.debug.xcconfig */;
+			baseConfigurationReference = A65CCC4992B43D010C9F2167 /* Pods-hypersonixstock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -777,7 +785,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3A54F9A53D9571E749B0C0D /* Pods-hypersonixstock.release.xcconfig */;
+			baseConfigurationReference = AB17104EE83B86AD6A22A25F /* Pods-hypersonixstock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -798,7 +806,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD75AC4746FCF715FC9431F4 /* Pods-hypersonixstock-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 41AC53B2C6D951A534220C5D /* Pods-hypersonixstock-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -826,7 +834,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F39B2CEE975F66F666BC9C3 /* Pods-hypersonixstock-tvOS.release.xcconfig */;
+			baseConfigurationReference = FEEEDCB9E62ADD81240256A4 /* Pods-hypersonixstock-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -854,7 +862,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AB01E62B183AE22908DDC3C /* Pods-hypersonixstock-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = AF5417A37F2E516D63D4A9ED /* Pods-hypersonixstock-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -881,7 +889,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CD3CF5ECF81FFA4D86C24C8 /* Pods-hypersonixstock-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 2A268700A1BFE92A6CCB6367 /* Pods-hypersonixstock-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
