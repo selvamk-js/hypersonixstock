@@ -29,6 +29,8 @@ build/
 local.properties
 *.iml
 
+src/config
+
 # Visual Studio Code
 #
 .vscode/
