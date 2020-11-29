@@ -14,7 +14,13 @@ const MobileDrawer = (props: any) => {
     <SafeAreaView style={[styles.safeArea]} edges={['right', 'left', 'top']}>
       <View style={styles.srow}>
         <View>
-          <Avatar.Image size={60} source={{ uri: user.photo }} />
+          <Avatar.Image
+            size={60}
+            source={{
+              uri:
+                'https://img.icons8.com/cotton/344/gender-neutral-user--v1.png',
+            }}
+          />
         </View>
         <View style={styles.name}>
           <Title style={styles.title}>{user.givenName}</Title>

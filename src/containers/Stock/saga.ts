@@ -1,17 +1,22 @@
 import { call, delay, put, takeLatest } from 'redux-saga/effects';
 import { request } from 'utils/request';
 import { isEmpty } from 'lodash';
-import Config from 'react-native-config';
+// import Config from 'react-native-config';
 
-import { actions } from './slice';
 import { actions as rootActions } from 'app/slice';
-import { MapResponse } from './mappers';
 import { ERROR } from 'constants/GlobalConstants';
+import Config from 'config/APIConfig';
+import { actions } from './slice';
+import { MapResponse } from './mappers';
 export function* getStockdataAPI() {
   yield delay(500);
   yield put(rootActions.changeGlobalLoader(true));
   try {
-    const response = yield call(request, Config.API_URL);
+    // const response = yield call(
+    //   request,
+    //   'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=OL196RLISZY6BKBR'
+    // );
+    const response = yield call(request, Config.URL);
 
     if (!isEmpty(response)) {
       const MappedRes = MapResponse(response['Time Series (5min)']);
@@ -23,6 +28,8 @@ export function* getStockdataAPI() {
       yield put(rootActions.changeGlobalLoader(false));
     }
   } catch (err) {
+    console.log(err);
+
     yield put(
       rootActions.changeToastMessage({
         toastType: ERROR,

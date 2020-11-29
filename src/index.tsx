@@ -23,7 +23,7 @@ const ConnectedApp = () => (
         <StyleProvider>
           <StatusBar
             translucent
-            backgroundColor="blue"
+            backgroundColor="#413175"
             barStyle="dark-content"
           />
           <App />

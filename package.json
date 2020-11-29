@@ -30,6 +30,7 @@
     "react": "16.13.1",
     "react-native": "0.63.3",
     "react-native-config": "^1.4.1",
+    "react-native-fingerprint-scanner": "^6.0.0",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-get-random-values": "^1.5.0",
     "react-native-linear-gradient": "^2.5.6",

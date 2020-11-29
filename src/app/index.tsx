@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { GoogleSignin } from '@react-native-community/google-signin';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import Config from 'react-native-config';
 
 import { sliceKey, reducer } from './slice';
@@ -19,12 +19,21 @@ const App = () => {
   const toast = useSelector(selectToastMessage);
 
   useEffect(() => {
-    GoogleSignin.configure({
-      scopes: ['email', 'profile'],
-      webClientId: Config.webClientId,
-      offlineAccess: false,
-      iosClientId: Config.iosClientId,
-    });
+    if (Platform.OS === 'android') {
+      GoogleSignin.configure({
+        scopes: ['email', 'profile'],
+        offlineAccess: false,
+        webClientId:
+          '41656066828-9t4quupqv34ge8idhnu57g42jl0slefn.apps.googleusercontent.com',
+      });
+    } else {
+      GoogleSignin.configure({
+        scopes: ['email', 'profile'],
+        webClientId: Config.webClientId,
+        offlineAccess: false,
+        iosClientId: Config.iosClientId,
+      });
+    }
   }, []);
 
   return (
