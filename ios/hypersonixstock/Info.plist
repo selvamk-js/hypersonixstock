@@ -93,5 +93,9 @@
 		</array>
 		<key>NSFaceIDUsageDescription</key>
 		<string>Stock app requires FaceID access to allows you quick and secure access.</string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>Stock app need require access for microphone to enable voice search</string>
+		<key>NSSpeechRecognitionUsageDescription</key>
+		<string>Stock app need require access for microphone to enable voice search</string>
 	</dict>
 </plist>

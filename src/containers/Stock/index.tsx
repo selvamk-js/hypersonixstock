@@ -5,8 +5,6 @@ import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import HighchartWebView from 'components/HighchartWebView';
 import {
   Avatar,
-  Button,
-  Caption,
   Card,
   Colors,
   Divider,
@@ -33,6 +31,7 @@ import { selectGlobalLoader } from 'app/selectors';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
 import { RootStackParamList } from 'routes/types';
+import VoiceSearch from './components/VoiceSearch';
 
 const config = {
   title: {
@@ -116,6 +115,7 @@ const Stock = () => {
   useInjectReducer({ key: stockSliceKey, reducer: reducer });
   useInjectSaga({ key: stockSliceKey, saga: stockSaga });
   const [chartOptions, setChartOptions] = useState(config);
+  const [showVoiceSearch, setShowVoiceSearch] = useState(false);
   const dispatch = useDispatch();
   const stcokData = useSelector(selectStockData);
   const stockInfo = useSelector(selectStockDataInfo);
@@ -150,14 +150,23 @@ const Stock = () => {
         />
       ),
       headerRight: () => (
-        <View>
-          <Button
-            mode="text"
-            theme={{ colors: { primary: '#FFFFFF' }, roundness: 25 }}
+        <View style={localStyles.iconView}>
+          <IconButton
+            icon={() => (
+              <FontAwesome5 name="microphone" size={20} color="white" solid />
+            )}
+            color="white"
+            size={30}
+            onPress={() => setShowVoiceSearch(true)}
+          />
+          <IconButton
+            icon={() => (
+              <FontAwesome5 name="sign-out-alt" size={20} color="white" solid />
+            )}
+            color="white"
+            size={30}
             onPress={_signOutAsync}
-          >
-            <Caption style={localStyles.signOut}>Sign Out</Caption>
-          </Button>
+          />
         </View>
       ),
     });
@@ -232,6 +241,18 @@ const Stock = () => {
   useEffect(() => {
     dispatch(actions.loadStockData());
   }, [dispatch]);
+
+  const handleClose = (result: string[]) => {
+    if (result.length > 0) {
+      setShowVoiceSearch(false);
+      const splitV = result[0].split(' ');
+      dispatch(actions.changeStockSearch(splitV[1]));
+      dispatch(actions.loadStockData());
+    } else {
+      setShowVoiceSearch(false);
+    }
+  };
+
   const GStyles = useStyles();
 
   const LeftContent = (lprops: any) => (
@@ -279,6 +300,8 @@ const Stock = () => {
             )}
           </View>
         </Card>
+        {/* <VoiceTest /> */}
+        <VoiceSearch isVisible={showVoiceSearch} onClose={handleClose} />
       </ScrollView>
       {isLoading && <Loader showLoader={isLoading} />}
     </View>
@@ -306,6 +329,9 @@ const localStyles = StyleSheet.create({
     color: '#FFFFFF',
     textTransform: 'none',
     fontWeight: 'bold',
+  },
+  iconView: {
+    flexDirection: 'row',
   },
 });
 

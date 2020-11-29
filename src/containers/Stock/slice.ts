@@ -12,6 +12,7 @@ export const initialState: IStockStore = {
     '6. Time Zone': '',
   },
   stockData: [],
+  stockSearch: 'IBM',
 };
 
 const stockScreenSlice = createSlice({
@@ -26,6 +27,9 @@ const stockScreenSlice = createSlice({
     },
     storeStockInfo(state, action: PayloadAction<IStockInfo>) {
       state.stockInfo = action.payload;
+    },
+    changeStockSearch(state, action: PayloadAction<string>) {
+      state.stockSearch = action.payload;
     },
   },
 });

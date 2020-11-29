@@ -15,4 +15,6 @@ export interface IStockStore {
   stockData: [];
 
   stockInfo: IStockInfo;
+
+  stockSearch: string;
 }

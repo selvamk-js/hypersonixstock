@@ -3,14 +3,19 @@ import { RootState } from 'types';
 
 import { initialState } from './slice';
 
-const selectRootStore = (state: RootState) => state.stockStore || initialState;
+const stockStore = (state: RootState) => state.stockStore || initialState;
 
 export const selectStockData = createSelector(
-  [selectRootStore],
+  [stockStore],
   store => store.stockData
 );
 
 export const selectStockDataInfo = createSelector(
-  [selectRootStore],
+  [stockStore],
   store => store.stockInfo
+);
+
+export const selectStockSearchText = createSelector(
+  [stockStore],
+  store => store.stockSearch
 );

@@ -2,10 +2,9 @@ import React, { useCallback, useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { GoogleSignin } from '@react-native-community/google-signin';
-import { Platform, StyleSheet, View } from 'react-native';
-import Config from 'react-native-config';
+import { LogBox, Platform, StyleSheet, View } from 'react-native';
+import Config from 'config/APIConfig';
 import FingerprintScanner from 'react-native-fingerprint-scanner';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { WARNING } from 'constants/GlobalConstants';
 import AuthContext from 'app/components/AuthContext';
@@ -23,6 +22,7 @@ import { IAuthContextType } from './types';
 const App = () => {
   useInjectReducer({ key: sliceKey, reducer: reducer });
   useInjectSaga({ key: sliceKey, saga: appRootSaga });
+  LogBox.ignoreAllLogs();
 
   const dispatch = useDispatch();
   const toastVisible = useSelector(selectToastVisibility);
@@ -34,8 +34,7 @@ const App = () => {
       GoogleSignin.configure({
         scopes: ['email', 'profile'],
         offlineAccess: false,
-        webClientId:
-          '41656066828-9t4quupqv34ge8idhnu57g42jl0slefn.apps.googleusercontent.com',
+        webClientId: Config.androidWebClientId,
       });
     } else {
       GoogleSignin.configure({
@@ -48,7 +47,6 @@ const App = () => {
   }, []);
 
   const handleSignOut = useCallback(async () => {
-    await AsyncStorage.clear();
     await GoogleSignin.revokeAccess();
     await GoogleSignin.signOut();
     signOut();
