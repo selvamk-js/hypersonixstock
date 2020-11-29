@@ -18,7 +18,7 @@ const HomeStack = () => (
       name={Routes.StockHome.stock}
       component={Stock}
       options={{
-        title: 'Hypersonix Stock',
+        title: 'Stocks',
         headerTitleStyle: {
           fontSize: 20,
         },

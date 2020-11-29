@@ -4,21 +4,24 @@ import { Button, Title } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import AsyncStorage from '@react-native-community/async-storage';
+import { actions as rootAction } from 'app/slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectAccessToken, selectIsBioValid } from 'app/selectors';
+import AuthContext from 'app/components/AuthContext';
+import { IAuthContextType } from 'app/types';
 
 import { actions, loginSliceKey, reducer } from './slice';
 import { loginSaga } from './saga';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectAccessToken } from 'app/selectors';
-import AuthContext from 'app/components/AuthContext';
-import { IAuthContextType } from 'app/types';
+import BioValidateModal from './BioValidateModal';
 
 const Login = () => {
   useInjectReducer({ key: loginSliceKey, reducer: reducer });
   useInjectSaga({ key: loginSliceKey, saga: loginSaga });
-  const { signIn } = useContext<IAuthContextType>(AuthContext);
 
   const dispatch = useDispatch();
   const token = useSelector(selectAccessToken) || '';
+  const isBioValidated = useSelector(selectIsBioValid);
+  const { signIn } = useContext<IAuthContextType>(AuthContext);
 
   useEffect(() => {
     const setToken = async () => {
@@ -34,6 +37,10 @@ const Login = () => {
     dispatch(actions.googleSignIn());
   };
 
+  const handleClose = () => {
+    dispatch(rootAction.changeIsBioValid(true));
+  };
+
   return (
     <View style={styles.rootView}>
       <StatusBar animated barStyle="light-content" />
@@ -43,9 +50,20 @@ const Login = () => {
         theme={{ colors: { primary: '#FFFFFF' }, roundness: 25 }}
         icon={() => <Icon name="google" brand size={25} color="#FFFFFF" />}
         onPress={handleGoogleSignIn}
+        disabled={!isBioValidated}
       >
         <Title style={styles.title}>Sign In with Google</Title>
       </Button>
+      {/* <Button
+        style={styles.button}
+        mode="outlined"
+        theme={{ colors: { primary: '#FFFFFF' }, roundness: 25 }}
+        icon={() => <Icon name="google" brand size={25} color="#FFFFFF" />}
+        onPress={() => setShowModal(true)}
+      >
+        <Title style={styles.title}>Show Modal</Title>
+      </Button> */}
+      <BioValidateModal isVisible={!isBioValidated} onClose={handleClose} />
     </View>
   );
 };

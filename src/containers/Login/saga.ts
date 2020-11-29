@@ -33,8 +33,9 @@ export function* googleSignInAPI() {
       // user cancelled the login flow
       yield put(
         rootActions.changeToastMessage({
-          toastType: ERROR,
-          toastMessage: "You've cancelled the login flow",
+          toastType: INFO,
+          toastMessage:
+            "Looks like you've cancelled the login, please try again",
         })
       );
       yield put(rootActions.changeToastVisibility(true));
