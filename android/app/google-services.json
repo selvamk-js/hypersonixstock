@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "41656066828",
+    "firebase_url": "https://hypersonixstock.firebaseio.com",
+    "project_id": "hypersonixstock",
+    "storage_bucket": "hypersonixstock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41656066828:android:35c6466ad48bbc547adf29",
+        "android_client_info": {
+          "package_name": "com.hypersonixstock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "41656066828-lfdvm55ktags3gr1jm099la2t48e60r9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hypersonixstock",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "41656066828-9t4quupqv34ge8idhnu57g42jl0slefn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDND4iWFMJq_VgDCUqB80lluCu9u6W3_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41656066828-9t4quupqv34ge8idhnu57g42jl0slefn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "41656066828-8oohebq3n820om58cs77nfhof6hn9vpd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.hypersonixstock"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

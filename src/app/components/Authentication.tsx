@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar, StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch } from 'react-redux';
 import NavigationService from 'services/NavigationService';
 
@@ -85,6 +85,7 @@ const Authentication = () => {
         dispatch({ type: 'SIGN_IN', token: data });
       },
       signOut: () => {
+        console.log('SIGN_OUT');
         globalDispatch(actions.resetAccessToken());
         dispatch({ type: 'SIGN_OUT' });
       },
@@ -100,7 +101,11 @@ const Authentication = () => {
         </Stack.Navigator>
       );
     }
-    if (state.userToken === null) {
+    if (
+      state.userToken === '' ||
+      state.userToken === null ||
+      !state.userToken
+    ) {
       return (
         <Stack.Navigator headerMode="none">
           <Stack.Screen name="Login" component={Login} />

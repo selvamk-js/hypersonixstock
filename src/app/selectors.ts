@@ -39,3 +39,8 @@ export const selectUserInfo = createSelector(
   [selectRootStore],
   store => store.userInfo
 );
+
+export const selectIsBioValid = createSelector(
+  [selectRootStore],
+  store => store.isBioValidated
+);

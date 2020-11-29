@@ -12,6 +12,7 @@ export interface IAppRootState {
   splashLoad: boolean;
   employeeData: IEmployeeRes[];
   userInfo: IUserData;
+  isBioValidated: boolean;
 }
 
 export interface IEmployeeRes {

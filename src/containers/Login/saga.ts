@@ -4,7 +4,7 @@ import {
   GoogleSignin,
   statusCodes,
 } from '@react-native-community/google-signin';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 // import { v4 as uuid } from 'uuid';
 import { actions } from './slice';
 import { actions as rootActions } from 'app/slice';
@@ -33,8 +33,9 @@ export function* googleSignInAPI() {
       // user cancelled the login flow
       yield put(
         rootActions.changeToastMessage({
-          toastType: ERROR,
-          toastMessage: "You've cancelled the login flow",
+          toastType: INFO,
+          toastMessage:
+            "Looks like you've cancelled the login, please try again",
         })
       );
       yield put(rootActions.changeToastVisibility(true));

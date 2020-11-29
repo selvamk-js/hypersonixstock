@@ -65,3 +65,4 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+android/java_pid1519.hprof

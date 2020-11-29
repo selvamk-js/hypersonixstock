@@ -27,6 +27,7 @@ export const initialState: IAppRootState = {
       name: '', // full name
     },
   },
+  isBioValidated: true,
 };
 
 const githubRepoFormSlice = createSlice({
@@ -74,6 +75,9 @@ const githubRepoFormSlice = createSlice({
     },
     storeUserInfo(state, action: PayloadAction<IUserData>) {
       state.userInfo = action.payload;
+    },
+    changeIsBioValid(state, action: PayloadAction<boolean>) {
+      state.isBioValidated = action.payload;
     },
   },
 });

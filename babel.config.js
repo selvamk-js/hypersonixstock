@@ -18,6 +18,7 @@ module.exports = {
           config: './src/config',
           services: './src/services',
           types: './src/types',
+          helper: './src/helper',
         },
       },
     ],

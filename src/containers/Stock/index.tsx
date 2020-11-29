@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { StatusBar, StyleSheet, View } from 'react-native';
+import { ScrollView, StatusBar, StyleSheet, View } from 'react-native';
 import { isEmpty } from 'lodash';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import HighchartWebView from 'components/HighchartWebView';
@@ -19,7 +19,7 @@ import {
   useNavigation,
 } from '@react-navigation/native';
 import { GoogleSignin } from '@react-native-community/google-signin';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import AuthContext from 'app/components/AuthContext';
@@ -256,28 +256,30 @@ const Stock = () => {
   return (
     <View style={GStyles.background.root}>
       <StatusBar barStyle="light-content" />
-      <Card style={GStyles.card.root} elevation={3}>
-        <Card.Title
-          title={<Subheading>Live Stock Data</Subheading>}
-          subtitle={
-            !isEmpty(stockInfo)
-              ? `Last Refreshed On: ${stockInfo['3. Last Refreshed']}`
-              : ''
-          }
-          left={LeftContent}
-          right={RightContent}
-          rightStyle={localStyles.rightView}
-        />
-        <Divider />
-        <View style={localStyles.cardContent}>
-          {!isEmpty(stcokData) && (
-            <HighchartWebView
-              options={chartOptions}
-              styles={localStyles.wvContainer}
-            />
-          )}
-        </View>
-      </Card>
+      <ScrollView>
+        <Card style={GStyles.card.root} elevation={3}>
+          <Card.Title
+            title={<Subheading>Live Stock Data</Subheading>}
+            subtitle={
+              !isEmpty(stockInfo)
+                ? `Last Refreshed On: ${stockInfo['3. Last Refreshed']}`
+                : ''
+            }
+            left={LeftContent}
+            right={RightContent}
+            rightStyle={localStyles.rightView}
+          />
+          <Divider />
+          <View style={localStyles.cardContent}>
+            {!isEmpty(stcokData) && (
+              <HighchartWebView
+                options={chartOptions}
+                styles={localStyles.wvContainer}
+              />
+            )}
+          </View>
+        </Card>
+      </ScrollView>
       {isLoading && <Loader showLoader={isLoading} />}
     </View>
   );

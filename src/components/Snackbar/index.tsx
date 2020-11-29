@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   sncakBar: {
     backgroundColor: '#283747',
     marginBottom: 10,
-    borderRadius: 15,
+    borderRadius: 10,
   },
   textColor: { color: '#FFFFFF' },
 });
