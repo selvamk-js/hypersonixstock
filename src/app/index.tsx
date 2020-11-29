@@ -5,9 +5,9 @@ import { GoogleSignin } from '@react-native-community/google-signin';
 import { Platform, StyleSheet, View } from 'react-native';
 import Config from 'react-native-config';
 import FingerprintScanner from 'react-native-fingerprint-scanner';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { ERROR, WARNING } from 'constants/GlobalConstants';
+import { WARNING } from 'constants/GlobalConstants';
 import AuthContext from 'app/components/AuthContext';
 
 import { sliceKey, reducer, actions } from './slice';
@@ -17,19 +17,17 @@ import { appRootSaga } from './saga';
 import { selectToastMessage, selectToastVisibility } from './selectors';
 import Authentication from './components/Authentication';
 import SnackbarCustom from 'components/Snackbar';
-import { BIO_AUTHFAILED, BIO_MSG, BIO_NO_SENSOR } from './constants';
+import { BIO_MSG, BIO_NO_SENSOR } from './constants';
 import { IAuthContextType } from './types';
 
 const App = () => {
   useInjectReducer({ key: sliceKey, reducer: reducer });
   useInjectSaga({ key: sliceKey, saga: appRootSaga });
-  const { signOut } = useContext<IAuthContextType>(AuthContext);
 
-  // const [isBioAvailbale, setIsBioAvailbale] = useState(false);
-  // const [isBioValid, setIsBioValid] = useState(false);
   const dispatch = useDispatch();
   const toastVisible = useSelector(selectToastVisibility);
   const toast = useSelector(selectToastMessage);
+  const { signOut } = useContext<IAuthContextType>(AuthContext);
 
   useEffect(() => {
     if (Platform.OS === 'android') {
@@ -49,19 +47,12 @@ const App = () => {
     }
   }, []);
 
-  const _signOutAsync = useCallback(async () => {
+  const handleSignOut = useCallback(async () => {
     await AsyncStorage.clear();
     await GoogleSignin.revokeAccess();
     await GoogleSignin.signOut();
-    dispatch(actions.changeIsBioValid(false));
     signOut();
-    dispatch(
-      actions.changeToastMessage({
-        toastType: ERROR,
-        toastMessage: BIO_AUTHFAILED,
-      })
-    );
-    dispatch(actions.changeToastVisibility(true));
+    dispatch(actions.changeIsBioValid(false));
   }, [signOut, dispatch]);
 
   useEffect(() => {
@@ -76,18 +67,20 @@ const App = () => {
               dispatch(actions.changeIsBioValid(true));
             })
             .catch(_error => {
-              _signOutAsync();
+              dispatch(actions.changeIsBioValid(false));
+              handleSignOut();
             });
         } else {
           FingerprintScanner.authenticate({
             title: BIO_MSG,
-            onAttempt: _signOutAsync,
+            onAttempt: () => handleSignOut(),
           })
             .then(() => {
               dispatch(actions.changeIsBioValid(true));
             })
             .catch(_error => {
-              _signOutAsync();
+              dispatch(actions.changeIsBioValid(false));
+              handleSignOut();
             });
         }
       })
@@ -104,7 +97,7 @@ const App = () => {
     return () => {
       FingerprintScanner.release();
     };
-  }, [dispatch, _signOutAsync]);
+  }, [dispatch, handleSignOut]);
 
   return (
     <View style={styles.addFlex}>

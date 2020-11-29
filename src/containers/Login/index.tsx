@@ -3,7 +3,7 @@ import { StatusBar, StyleSheet, View } from 'react-native';
 import { Button, Title } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { actions as rootAction } from 'app/slice';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAccessToken, selectIsBioValid } from 'app/selectors';
@@ -43,7 +43,11 @@ const Login = () => {
 
   return (
     <View style={styles.rootView}>
-      <StatusBar animated barStyle="light-content" />
+      <StatusBar
+        animated
+        backgroundColor={!isBioValidated ? '#FFFFFF' : '#413175'}
+        barStyle={!isBioValidated ? 'dark-content' : 'light-content'}
+      />
       <Button
         style={styles.button}
         mode="outlined"

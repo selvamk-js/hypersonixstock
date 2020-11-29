@@ -4,7 +4,7 @@ import {
   GoogleSignin,
   statusCodes,
 } from '@react-native-community/google-signin';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 // import { v4 as uuid } from 'uuid';
 import { actions } from './slice';
 import { actions as rootActions } from 'app/slice';

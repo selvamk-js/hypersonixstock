@@ -1,7 +1,14 @@
 import { BIO_AUTHFAILED, BIO_MSG, BIO_NO_SENSOR } from 'app/constants';
 import { ERROR, WARNING } from 'constants/GlobalConstants';
 import React, { useEffect, useState } from 'react';
-import { StatusBar, StyleSheet, View, Image, Platform } from 'react-native';
+import {
+  StatusBar,
+  StyleSheet,
+  View,
+  Image,
+  Platform,
+  Alert,
+} from 'react-native';
 import FingerprintScanner from 'react-native-fingerprint-scanner';
 import Modal from 'react-native-modal';
 import { Button, Caption, Subheading } from 'react-native-paper';
@@ -78,13 +85,15 @@ const BioValidateModal = (props: IProps) => {
             });
         } else {
           FingerprintScanner.authenticate({
-            title: BIO_MSG,
-            onAttempt: onAttemptFail,
+            description: BIO_MSG,
           })
             .then(() => {
               dispatch(rootAction.changeIsBioValid(true));
+              onClose();
+              Alert.alert('');
             })
             .catch(_error => {
+              Alert.alert('');
               onAttemptFail();
             });
         }
